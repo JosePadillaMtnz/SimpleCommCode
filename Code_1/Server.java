@@ -5,7 +5,7 @@ import java.io.*;
 public class Server {
 	
 	// The Server class creates two sockets, one for the server and one for the client to connect. 
-	//In this case, it will be necessary to connect to port 9999, but it could be changed to any other.
+	// In this case, it will be necessary to connect to port 9999, but it could be changed to any other.
 
 	public static void main(String[] args) {
 		ServerSocket s = null;
@@ -42,7 +42,7 @@ class RequestManager extends Thread {
 	public void run() {
 		BufferedReader sin;
 		PrintStream sout;
-		String line = null, pet = null, url = null, version = null, cookie = "";
+		String line = null, url = null, cookie = "";
 		String info = "<html><head><title>All access</title></head><body bgcolor=\"aquamarine\"><h1>All accesses made from your browser to web pages</h1><h4>Times accessed | Page accessed</h4><br>";
 		
 		try {
@@ -53,14 +53,8 @@ class RequestManager extends Thread {
 				
 				while (line.length() > 0 ) { 
 					String[] parts = line.split(" ");
-					if (parts[0].equals("GET") || parts[0].equals("POST")) {
-						pet = parts[0];
-						url = parts[1];
-						version = parts[2];
-					}
-					if (parts[0].equals("Cookie:")) {
-						cookie = getCookies(line);
-					}
+					if (parts[0].equals("GET") || parts[0].equals("POST")) url = parts[1];
+					if (parts[0].equals("Cookie:")) cookie = getCookies(line);
 					line = sin.readLine();	
 				}
 				

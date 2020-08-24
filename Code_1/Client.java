@@ -17,6 +17,7 @@ public class Client {
 		String cookies = "";
 		String cookiev = null;
 		String reply = "GET /"+ent.nextLine()+" HTTP1.1\r\n";
+		ent.close();
 		
 		Socket myClient;
 		DataInputStream entry;
@@ -74,8 +75,8 @@ public class Client {
 		return line;
 	}
 	
-	public static void putInFile(String valor) {
-		String[] parts = valor.split("=");
+	public static void putInFile(String value) {
+		String[] parts = value.split("=");
 		try {
 			FileWriter file = new FileWriter("cookie.txt", true);
 			BufferedWriter out = new BufferedWriter(file);
