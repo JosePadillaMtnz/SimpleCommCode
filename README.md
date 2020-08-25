@@ -19,3 +19,11 @@ The servers will be in charge of reading, processing and sending the data read (
 - Change the range of a specific parameter.
 
 To get the scenario up, simply compile and run the Main class. Once executed, the data appears on the screen once received (broadcast), also allowing the possibility of sending control messages to the servers (unicast).
+
+### Case 3: Using XML and JSON encoded messages in communication
+
+### Case 4: Servers and client with secure sockets
+
+### Case 5: Add email services with SMTP
+
+### Case 6: Access protocol with REST API
